@@ -21,3 +21,22 @@ export async function addTodo(title: string): Promise<Todo> {
   }
   return res.json();
 }
+
+export async function updateTodo(id: string, completed: boolean): Promise<Todo> {
+  const res = await fetch(`${API_URL}/todos/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ completed }),
+  });
+  if (!res.ok) {
+    throw new Error("Could not update the to-do");
+  }
+  return res.json();
+}
+
+export async function deleteTodo(id: string): Promise<void> {
+  const res = await fetch(`${API_URL}/todos/${id}`, { method: "DELETE" });
+  if (!res.ok) {
+    throw new Error("Could not delete the to-do");
+  }
+}
