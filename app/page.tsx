@@ -1,16 +1,10 @@
 import { Suspense } from "react";
-import TodoItem from "@/components/TodoItem";
+import TodoList from "@/components/TodoList";
 import { getAllTodos } from "@/lib/api";
 
-async function TodoList() {
+async function Todos() {
   const todos = await getAllTodos();
-  return (
-    <ul className="flex flex-col gap-3">
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} />
-      ))}
-    </ul>
-  );
+  return <TodoList initialTodos={todos} />;
 }
 
 export default function Home() {
@@ -19,7 +13,7 @@ export default function Home() {
       <main className="mx-auto max-w-xl px-6 py-16">
         <h1 className="mb-6 text-3xl font-bold text-zinc-900">My To-dos</h1>
         <Suspense fallback={<p className="text-zinc-500">Loading...</p>}>
-          <TodoList />
+          <Todos />
         </Suspense>
       </main>
     </div>
