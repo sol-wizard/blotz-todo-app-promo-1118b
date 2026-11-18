@@ -14,7 +14,11 @@ export async function addTodo(title: string): Promise<Todo> {
   const res = await fetch(`${API_URL}/todos`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, completed: false }),
+    body: JSON.stringify({
+      title,
+      completed: false,
+      createdAt: new Date().toISOString().slice(0, 10),
+    }),
   });
   if (!res.ok) {
     throw new Error("Could not add the to-do");

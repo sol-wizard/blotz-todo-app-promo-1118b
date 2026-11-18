@@ -20,6 +20,7 @@ export default function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
       >
         {todo.title}
       </span>
+      <span className="text-sm text-zinc-400">{todo.createdAt}</span>
       <button
         onClick={() => onDelete(todo.id)}
         className="rounded px-2 py-1 text-sm text-red-600 hover:bg-red-50"
