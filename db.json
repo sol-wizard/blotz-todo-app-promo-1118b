@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Watch the React video",
+      "completed": true,
+      "createdAt": "2026-11-16"
+    },
+    {
+      "id": "2",
+      "title": "Build the to-do app",
+      "completed": true,
+      "createdAt": "2026-11-17"
+    },
+    {
+      "id": "3",
+      "title": "Show it to my Tech Lead",
+      "completed": false,
+      "createdAt": "2026-11-18"
+    },
+    {
+      "title": "Finish Module 1 quiz",
+      "completed": true,
+      "createdAt": "2026-11-18",
+      "id": "uZ8kiVqpxxA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
